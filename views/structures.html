@@ -1,0 +1,21 @@
+<?php
+
+require_once '../db.php';
+$con = new pdo_db();
+
+$table = $_GET['table'];
+
+$columns = $con->getData("SHOW COLUMNS FROM $table;");
+var_dump($columns);
+
+?>
+<form>
+  <div class="form-group">
+    <label>JSON</label>
+    <textarea class="form-control" rows="3"><?php	
+		echo "\r{\n";
+		echo "   \"\":";
+		echo "\r}\n";	
+	?></textarea>
+  </div>
+</form>
