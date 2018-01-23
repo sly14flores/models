@@ -30,7 +30,8 @@ $columns = $con->getData("SHOW COLUMNS FROM $table;");
   </div>
   <div class="form-group">
     <label><h3>JSON Initialization/Set</h3></label>
-    <textarea class="form-control" rows="<?php echo count($columns)+3; ?>"><?php	
+    <textarea class="form-control" rows="<?php echo count($columns)+3; ?>"><?php		
+		echo "scope".$prefix." = {};\n";
 		foreach ($columns as $i => $value) {
 			$av = ($value['Type'] == "int(10)")?"0":"\"\"";
 			echo "scope".$prefix.".".$value['Field']." = $av;\n";
