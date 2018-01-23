@@ -51,7 +51,7 @@ $columns = $con->getData("SHOW COLUMNS FROM $table;");
 $http({
   method: 'POST',
   url: '<?php echo $dir; ?>',
-  data: <?php echo $prefix.$table."\n"; ?>
+  data: scope<?php echo $prefix."\n"; ?>
 }).then(function mySucces(response) {
 	
 }, function myError(response) {
